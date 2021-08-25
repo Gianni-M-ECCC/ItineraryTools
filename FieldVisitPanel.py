@@ -24,13 +24,7 @@ class FieldVisitPanel(wx.Panel):
 
         self.location = []
 
-        conn = pg2.connect(database="postgres", user='project_user', password='password', host='127.0.0.1', port='5432')
-        cur = conn.cursor()
-        cur.execute('SELECT * FROM field_Info')
-        data = cur.fetchall()
-        for x in data:
-            self.location.append(list(x)[0])
-        conn.close()
+        
 
         self.InitUI()
 
